@@ -4,6 +4,9 @@ var losses = 0;
 var numGuesses = 0;
 var usedArray = [];
 
+var winsText = document.getElementById("wins-text");
+var lossText = document.getElementById("loss-text");
+
 
 // the computer chooses a letter from alphabet
 
@@ -24,11 +27,25 @@ document.onkeyup = function (event) {
     if (userLetter !== computerLetter) {
 
         console.log("you lose");
+        losses++;
     }
     else {
         console.log("you win")
+        wins++;
+
+       
     }
+    console.log(wins);
+    console.log(document.getElementById("wins-text"));
+
+    
+    document.getElementById("wins-text").textContent = wins;
+    document.getElementById("loss-text").textContent = losses;
+
+
+    
 }
+
 
 //user chooses a letter with a key stroke
 
