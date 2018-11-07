@@ -5,7 +5,7 @@
     <title>
         Psychic Game
     </title>
-
+    <link rel=“stylesheet” type=“text/css” href=../assets/css/style.css”>
     <script src="assets/javascript/game2.js"></script>
 </head>
 
@@ -19,13 +19,18 @@
 
     <h3>Losses: <span id="loss-text"></span></h3>
 
-    <h3>Guesses Left: <span id="guessesLeftText"></span></h3>
+    <h3>Guesses Left: <span id="guesses-text"></span></h3>
 
-    <h3>Your guesses so far: <span id="userUsedGuessesText"></span></h3>
+    <h3>Your guesses so far: <span id="used"></span></h3>
 
-    <h2>Computer's Letter <span id="computerLetterText"></span></h2>
+    <h2>Computer's Letter: <span id="computer-letter">?</span></h2>
     <!-- This will appear after the user has guessed correctly, or run out of guesses. -->
 
+    <!-- <button onclick="myFunction()">Try it</button> -->
+
+    <div class="winnerBox">
+        <h2>You guessed correctly! You are a winner!</h2>
+    </div>
    
 
 </body>
