@@ -1,0 +1,20 @@
+#winnerBox {
+    /* display: none; */
+    border-style: solid;
+    border-color: purple;
+    background-color: green;
+    color: blue;
+    text-align: center;
+    display: none;
+}
+body{
+    background-image: url(assets/images/astrology-astronomy-background-image-956981.jpg);
+    color:#fb06ac;
+    font-size: 20px;
+    
+    
+}
+.title {
+    font-size: 40px;
+    color: palevioletred;
+}

@@ -1,62 +1,100 @@
-// //declaring my variables
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var wins = 0;
+var losses = 0;
+var numGuesses = 10;
+var usedArray = [];
 
-// var letters = "abcdefghijklmnopqrstuvwxyz";
-// var wins = 0;
-// var losses = 0;
-// var numGuesses = 0;
-// var usedArray = [];
-
-
-// //defines the function
-// function computerGuess() {
-//     var computerChoice = letters[Math.floor(Math.random() * letters.length)];
-//     console.log(computerChoice);
-
-// }
+function winnerBox() {
+    var winBox = document.getElementById("winnerBox");
+        winBox.style.display = "block";
+    
+}
 
 
 
+//start:
+//computer chooses a random letter from the array
+function compGuess(letters) {
+    return letters[Math.floor(Math.random() * letters.length)];
+}
 
-// document.onkeyup = function (event) {
-//     var userLetter = event.key;
-//     console.log(userLetter);
-
-
-
-//     //if user does guess correctly
-//     computerGuess(); {
-//         if (userLetter === computerChoice) {
-//             won++;
-//             numGuesses = 10;
-//             usedArray = [];
-
-//         }
-
-//         if (userLetter !== computerChoice) {
-//             numGuesses--;
-
-//         }
-
-//         //when remaining attempts equals zero, lost is incremented by 1; attempts is reset to 10, and used letters array is cleared
-//         if (numGuesses == 0) {
-//             lost++;
-//             usedArray = []
-//             numGuesses = 10;
-//         }
+var computerLetter = compGuess(letters);
 
 
-//         //handling INCORRECT GUESSES - OUTPUT
-//         //this 'if' prevents a letter selected a 2nd time from being written to the usedArray again, although it still counts as a guess
-//         if (usedArray.indexOf(userLetter) >= 0) {
+//user chooses letter via the keyboard
 
-//         } else {
-//             //this pushes the players incorrect guess to the usedArray and writes it to the HTML
-//             usedArray.push(userLetter);
-//             document.getElementById('userLetterText').innerHTML = usedArray;
-//             console.log(usedArray);
+document.onkeyup = function (event) {
+    //make sure it is lowercase
+    var userLetter = event.key.toLowerCase();
+    console.log(userLetter);
+    console.log("comp " + computerLetter);
 
-//         }
-//     }
-// }
 
-// // Changes the text in the HTML
+
+    //Decrease number of guesses
+    if (numGuesses > 0) {
+        numGuesses--;
+        document.getElementById("guesses-text").textContent = numGuesses;
+
+        //make sure its a valid letter
+        if (letters.indexOf(userLetter) != -1) {
+            //prints valid users letter the to screen
+            document.getElementById("user-letter").textContent = userLetter;
+
+
+            //compare it to the computers letter
+
+            //if guessed correctly 
+            if (userLetter === computerLetter) {
+                console.log("you win");
+                winnerBox();
+
+                //tell user they won
+                alert("you win!")
+
+                //reveal computers letter
+                document.getElementById("computer-letter").textContent = computerLetter;
+                //increase wins by 1
+                wins++;
+
+
+                
+        
+
+
+                //reset game
+
+            }
+            //if not, but still has guesses
+            if (userLetter !== computerLetter) {
+                //incorrect, guess again
+                alert("Incorrect guess, please choose a new letter!")
+                //incorrect guess
+                //less than 10 guesses
+                //used letter is printed to the screen
+                usedArray.push(userLetter);
+                document.getElementById("used").textContent = usedArray;
+            }
+
+
+        } else {
+            alert("please choose a valid letter");
+        }
+    }
+    //OUT OF GUESSES
+    if (numGuesses == 0) {
+        //tell user game is over
+        alert("Game over!");
+        //print computer choice to the screen
+        document.getElementById("computer-letter").textContent = computerLetter;
+        //increase loses
+        losses++;
+
+        //reset game******
+    }
+
+    document.getElementById("wins-text").textContent = wins;
+    document.getElementById("loss-text").textContent = losses;
+
+}
+

@@ -2,16 +2,23 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>
         Psychic Game
     </title>
-    <link rel=“stylesheet” type=“text/css” href=../assets/css/style.css”> <script src="assets/javascript/game3.js">
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="assets/javascript/game3.js">
     </script>
 </head>
 
 <body>
 
-    <h1>Psychic Game : Guess a Letter</h1>
+    <h1 class="title">Psychic Game : Guess a Letter</h1>
+
+    <div id="winnerBox">
+        <h2>You guessed correctly! You are a winner!</h2>
+    </div>
 
     <h3>You Chose: <span id="user-letter"> </span></h3>
 
@@ -28,21 +35,9 @@
 
     <!-- <button onclick="myFunction()">Try it</button> -->
 
-    <!-- <div class="winnerBox">
-        <h2>You guessed correctly! You are a winner!</h2>
-    </div> -->
+
 
 
 </body>
 
 </html>
-
-<!-- Guess a letter
-
-wins
-
-losses
-
-guesses left
-
-guessed so far -->
