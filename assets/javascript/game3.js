@@ -4,69 +4,81 @@ var losses = 0;
 var numGuesses = 10;
 var usedArray = [];
 
-//variables to write to html doc
-var winsText = document.getElementById("wins-text");
-var lossText = document.getElementById("loss-text");
 
-
-// function to choose a random letter from alphabet array
+//start:
+//computer chooses a random letter from the array
 function compGuess(letters) {
     return letters[Math.floor(Math.random() * letters.length)];
 }
 
 var computerLetter = compGuess(letters);
 
-//user chooses a letter with a key stroke
 
-
-//indexof - check to see if its in the letters array
-
+//user chooses letter via the keyboard
 document.onkeyup = function (event) {
-    var userLetter = event.key;
-    console.log("user: " + userLetter);
-    console.log("computer: " + computerLetter);
-    //find a way to only enter a letter and a string
+    //make sure it is lowercase
+    var userLetter = event.key.toLowerCase();
+    console.log(userLetter);
+    console.log("comp " + computerLetter);
+    //print users letter the to screen
+    document.getElementById("user-letter").textContent = userLetter;
 
-    
-    
+    //Decrease number of guesses
+    if (numGuesses > 0) {
+        numGuesses--;
+        document.getElementById("guesses-text").textContent = numGuesses;
+
+        //make sure its a valid letter
+        if (letters.indexOf(userLetter) != -1) {
 
 
+            //compare it to the computers letter
+
+            //if guessed correctly 
+            if (userLetter === computerLetter) {
+                console.log("you win");
+
+                //tell user they won
+                alert("you win!")
+
+                //reveal computers letter
+                document.getElementById("computer-letter").textContent = computerLetter;
+                //increase wins by 1
+                wins++;
+                
+                //reset game
+
+            }
+            //if not, but still has guesses
+            if (userLetter !== computerLetter) {
+                //incorrect, guess again
+                alert("Incorrect guess, please choose a new letter!")
+                    //incorrect guess
+                    //less than 10 guesses
+                    //used letter is printed to the screen
+                    usedArray.push(userLetter);
+                    document.getElementById("used").textContent = usedArray;   
+            }
 
 
+        } else {
+            alert("please choose a valid letter");
+        }
+    }
+    //OUT OF GUESSES
+    if (numGuesses == 0) {
+        //tell user game is over
+        alert("Game over!");
+        //print computer choice to the screen
+        document.getElementById("computer-letter").textContent = computerLetter;
+        //increase loses
+        losses++;
 
-
-
-
+        //reset game******
+    }
 
     document.getElementById("wins-text").textContent = wins;
-    document.getElementById("guesses-text").textContent = numGuesses;
-   
+    document.getElementById("loss-text").textContent = losses;
+    
 }
-console.log(wins);
-console.log(document.getElementById("wins-text"));
-console.log(usedArray);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Restart game when you win or lose
-
-//if the guess wrong 10 times, they lose
-
-
-//screen counts losses and wins
 
