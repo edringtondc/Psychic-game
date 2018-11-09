@@ -6,7 +6,7 @@
     <title>
         Psychic Game
     </title>
-
+    <link href="assets/css/reset.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css" />
 
       
@@ -18,49 +18,43 @@
 
 <body>
     <header>
-    <div id="gameTitle">
-    <h1 class="title">Psychic Game : Guess a Letter</h1>
+        <div id="gameTitle">
+            <h1 class="title">Psychic Game : Guess a Letter</h1>
 
-    
 
-    <h4>Rules: Try to guess the computer's secret letter! You have 10 guesses!</h4>
-</div>
 
-   </header>
+            <h4>Rules: Try to guess the computer's secret letter! You have 10 guesses!</h4>
+        </div>
 
-   <div id="winnerBox">
+    </header>
+
+    <div id="winnerBox">
         <h2>You guessed correctly! You are a winner!</h2>
     </div>
 
-<div id="content">
+    <div id="content">
 
-    <div id="winsLossBox">
-        <h3>Wins: <span id="wins-text"></span></h3>
+        <div id="winsLossBox">
+            <h3>Wins: <span id="wins-text"></span></h3>
 
-        <h3>Losses: <span id="loss-text"></span></h3>
-    </div>
+            <h3>Losses: <span id="loss-text"></span></h3>
+        </div>
 
-    <div id="gameBox">
-        <h3>You Chose: <span id="user-letter"> </span></h3>
-
-
-        <h3>Guesses Left: <span id="guesses-text"></span></h3>
-
-        <h3>Your guesses so far: <span id="used"></span></h3>
-
-        <h2>Computer's Letter: <span id="computer-letter">?</span></h2>
-        <!-- This will appear after the user has guessed correctly, or run out of guesses. -->
-
-    </div>
-    <div id="bottomContainer">
-        
-    </div>
-</div>
-
-    <!-- <button id#="click-me">Play Game!</button> -->
+        <div id="gameBox">
+            <h3>You Chose: <span id="user-letter"> </span></h3>
 
 
+            <h3>Guesses Left: <span id="guesses-text"></span></h3>
 
+            <h3>Your guesses so far: <span id="used"></span></h3>
+
+            <h2>Computer's Letter: <span id="computer-letter">?</span></h2>
+            <!-- This will appear after the user has guessed correctly, or run out of guesses. -->
+
+        </div>
+        <div id="bottom-container">
+            <button id#="play-button">Play Game!</button>
+        </div>
 
 </body>
 

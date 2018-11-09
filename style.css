@@ -7,6 +7,7 @@
     text-align: center;
     display: none;
     align-items: center;
+    z-index: 99;
     /* justify-content: center; */
 }
 body{
@@ -14,23 +15,18 @@ body{
     color:#8aec7b;
     font-size: 20px;
     display: flex;
-    
-    
 }
 
-h1{
-    width: 100%;
-    
-}
+
 .title {
     font-size: 40px;
     color: palevioletred;
+    width: 100%
 }
 #gameTitle {
     width: 100%;
-    display: flex;
     position: relative;
-    /* justify-content: space-around; */
+    text-align: center;
 }
 #content {
     position: absolute;
@@ -41,6 +37,7 @@ h1{
     /* justify-content: center: */
 
 }
+
 #winsLossBox {
     background-color: purple;
     /* position: absolute; */
@@ -53,10 +50,10 @@ h1{
 #gameBox {
     background-color: black;
     /* position: absolute; */
-    
-  
+}
 
-
-
+#bottom-container {
+    position: absolute;
+    display: flex;
 }
 

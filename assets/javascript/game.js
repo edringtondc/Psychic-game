@@ -5,14 +5,18 @@ var numGuesses = 10;
 var usedArray = [];
 
 function winnerBox() {
-    var winBox = document.getElementById("winnerBox");
-        winBox.style.display = "block";
-    
+    var winBox = document.getElementById("winner-message");
+    winBox.style.display = "block";
+
 }
 
 
 
 //start:
+
+//function reset array, comp guess, user letter, except wins and losses, winner thing goes away
+
+
 //computer chooses a random letter from the array
 function compGuess(letters) {
     return letters[Math.floor(Math.random() * letters.length)];
@@ -23,9 +27,25 @@ var computerLetter = compGuess(letters);
 //code for a click function
 // $("#click-me").on("click", function() {
 //     alert("Try to guess the computers letter! You have 10 guesses");
-  
+
 // });
 //user chooses letter via the keyboard
+// $("#play-button").on("click", function() {
+//     console.log("button clicked");
+//     var numGuesses = 10;
+//     var usedArray = [];
+//     compGuess();
+
+
+//     });
+
+
+$("#play-button").on("click", function() {
+    console.log("button clicked");
+    alert("play button pressed");
+
+});
+
 
 //
 //alert("Try to guess the computers letter! You have 10 guesses");
@@ -56,7 +76,7 @@ document.onkeyup = function (event) {
                 winnerBox();
 
                 //tell user they won
-                alert("you win!")
+
 
                 //reveal computers letter
                 document.getElementById("computer-letter").textContent = computerLetter;
@@ -64,8 +84,8 @@ document.onkeyup = function (event) {
                 wins++;
 
 
-                
-        
+
+
 
 
                 //reset game
@@ -104,6 +124,6 @@ document.onkeyup = function (event) {
 
 }
 
-//function reset array, comp guess, user letter, except wins and losses, winner thing goes away
+
 
 

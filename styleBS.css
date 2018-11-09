@@ -1,0 +1,43 @@
+#game-title {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(93, 95, 164);
+    color: palevioletred;
+    font-size: 30px;
+
+}
+
+
+.main-game{
+    text-align: center;
+    color: darkblue;
+    background-color: lightgrey;
+}
+
+#title {
+    font-size: 40px;
+    color: palevioletred;
+    
+}
+
+#incorrect-message{
+    display: block;
+}
+
+#left-box{
+    
+}
+
+#winner-message{
+    text-align: center;
+    color: pink;
+    display: none;
+
+}
+body{
+    background-image: url(assets/images/astrology-astronomy-background-image-956981.jpg);
+    color:#8aec7b;
+    font-size: 20px;
+   
+}
