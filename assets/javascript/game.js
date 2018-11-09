@@ -11,7 +11,6 @@ function compGuess(letters) {
     console.log(letters);
     return letters[Math.floor(Math.random() * letters.length)];
     
-
 }
 //computer chooses a random letter from the array
 var computerLetter = compGuess(letters);
@@ -21,17 +20,9 @@ var computerLetter = compGuess(letters);
 
 $(document).ready(function () {
 
-    
-    
-
-   
-
-   
-
     function winnerBox() {
         var winBox = document.getElementById("winner-message");
         winBox.style.display = "block";
-
     }
 
     function reset() {
@@ -52,15 +43,7 @@ $(document).ready(function () {
         console.log("button clicked");
         reset();
 
-
     });
-
-   
-    
-   
-    
-
-
 
     //alert("Try to guess the computers letter! You have 10 guesses");
     document.onkeyup = function (event) {
@@ -70,9 +53,6 @@ $(document).ready(function () {
         console.log(userLetter);
         console.log("comp " + computerLetter);
       
-
-    
-
         //Decrease number of guesses
         if (numGuesses > 0) {
             numGuesses--;
@@ -83,41 +63,41 @@ $(document).ready(function () {
                 //prints valid users letter the to screen
                 document.getElementById("user-letter").textContent = userLetter;
 
-
-                //compare it to the computers letter
-
+                //compare it to the computers letter, 
+                
                 //if guessed correctly 
                 if (userLetter === computerLetter) {
+                    //tell user they won
                     console.log("you win");
                     winnerBox();
-
-                    //tell user they won
-
 
                     //reveal computers letter
                     document.getElementById("computer-letter").textContent = computerLetter;
                     //increase wins by 1
                     wins++;
 
-                    // reset();
                 }
-                //if not, but still has guesses
+                //if not = tp computerLetter, but still has guesses
                 if (userLetter !== computerLetter) {
-                    //incorrect, guess again
+
+                    //tell user to guess again
                     alert("Incorrect guess, please choose a new letter!")
-                    document.getElementById("guess-again").textContent = ("Guess Again!")
-                    //incorrect guess
-                    //less than 10 guesses
-                    //used letter is printed to the screen
+                   
+                    //prints used letter to the screen
                     usedArray.push(userLetter);
-                    document.getElementById("used").textContent = usedArray;
+                    document.getElementById("used").textContent = usedArray.join(", ");
                 }
+
+                //if in used array
+                //alert("You've already guessed "userLetter");
 
 
             } else {
                 alert("please choose a valid letter");
             }
+
         }
+
         //OUT OF GUESSES
         if (numGuesses == 0) {
             //tell user game is over
@@ -129,7 +109,6 @@ $(document).ready(function () {
 
             //reset game******
             reset();
-           
         }
 
         document.getElementById("wins-text").textContent = wins;
