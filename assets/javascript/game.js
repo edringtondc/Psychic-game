@@ -1,14 +1,4 @@
 
-
-
-
-//start:
-
-//function reset array, comp guess, user letter, except wins and losses, winner thing goes away
-
-
-
-
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     
     var wins = 0;
@@ -18,7 +8,9 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 
 
 function compGuess(letters) {
+    console.log(letters);
     return letters[Math.floor(Math.random() * letters.length)];
+    
 
 }
 //computer chooses a random letter from the array
@@ -42,24 +34,28 @@ $(document).ready(function () {
 
     }
 
-    // $("#play-button").on("click", function () {
-    //     console.log("button clicked");
-    //     var numGuesses = 10;
-    //     var usedArray = [];
-    //     compGuess();
-
-
-    // });
-
     function reset() {
         console.log("game reset");
-        var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+        var winBox = document.getElementById("winner-message");
+        winBox.style.display = "none";
         var numGuesses = 10;
+        document.getElementById("guesses-text").textContent = numGuesses;
         var usedArray = [];
-        compGuess();
+        var userLetter = " ";
+        document.getElementById("user-letter").textContent = userLetter;
+        document.getElementById("computer-letter").textContent = "?";
+        compGuess(letters);
 
     }
+
+    $("#play-button").on("click", function () {
+        console.log("button clicked");
+        reset();
+
+
+    });
+
+   
     
    
     

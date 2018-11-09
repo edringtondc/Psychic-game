@@ -1,3 +1,12 @@
+body {
+    width: 100%;
+    padding-right: -10px;
+    margin: auto;
+    background-image: url(assets/images/astrology-astronomy-background-image-956981.jpg);
+    color:#8aec7b;
+    font-size: 20px;
+}
+
 #game-title {
     width: 100%;
     text-align: center;
@@ -5,7 +14,16 @@
     background-color: rgb(93, 95, 164);
     color: palevioletred;
     font-size: 30px;
+}
 
+.row{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#big {
+    padding-right: 0;
+    margin-right: 0;
 }
 
 
@@ -34,10 +52,4 @@
     color: pink;
     display: none;
 
-}
-body{
-    background-image: url(assets/images/astrology-astronomy-background-image-956981.jpg);
-    color:#8aec7b;
-    font-size: 20px;
-   
 }
