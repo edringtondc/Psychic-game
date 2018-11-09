@@ -6,15 +6,57 @@
     color: blue;
     text-align: center;
     display: none;
+    align-items: center;
+    /* justify-content: center; */
 }
 body{
     background-image: url(assets/images/astrology-astronomy-background-image-956981.jpg);
-    color:#fb06ac;
+    color:#8aec7b;
     font-size: 20px;
+    display: flex;
     
+    
+}
+
+h1{
+    width: 100%;
     
 }
 .title {
     font-size: 40px;
     color: palevioletred;
 }
+#gameTitle {
+    width: 100%;
+    display: flex;
+    position: relative;
+    /* justify-content: space-around; */
+}
+#content {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    bottom: 0;
+    left: 0;
+    /* justify-content: center: */
+
+}
+#winsLossBox {
+    background-color: purple;
+    /* position: absolute; */
+    z-index: 2;
+    
+
+
+}
+
+#gameBox {
+    background-color: black;
+    /* position: absolute; */
+    
+  
+
+
+
+}
+

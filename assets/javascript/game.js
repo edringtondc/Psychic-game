@@ -20,9 +20,15 @@ function compGuess(letters) {
 
 var computerLetter = compGuess(letters);
 
-
+//code for a click function
+// $("#click-me").on("click", function() {
+//     alert("Try to guess the computers letter! You have 10 guesses");
+  
+// });
 //user chooses letter via the keyboard
 
+//
+//alert("Try to guess the computers letter! You have 10 guesses");
 document.onkeyup = function (event) {
     //make sure it is lowercase
     var userLetter = event.key.toLowerCase();
@@ -97,4 +103,7 @@ document.onkeyup = function (event) {
     document.getElementById("loss-text").textContent = losses;
 
 }
+
+//function reset array, comp guess, user letter, except wins and losses, winner thing goes away
+
 

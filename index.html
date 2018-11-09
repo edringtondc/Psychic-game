@@ -8,32 +8,56 @@
     </title>
 
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="assets/javascript/game.js">
     </script>
 </head>
 
 <body>
-
+    <header>
+    <div id="gameTitle">
     <h1 class="title">Psychic Game : Guess a Letter</h1>
 
-    <div id="winnerBox">
+    
+
+    <h4>Rules: Try to guess the computer's secret letter! You have 10 guesses!</h4>
+</div>
+
+   </header>
+
+   <div id="winnerBox">
         <h2>You guessed correctly! You are a winner!</h2>
     </div>
 
-    <h3>You Chose: <span id="user-letter"> </span></h3>
+<div id="content">
 
-    <h3>Wins: <span id="wins-text"></span></h3>
+    <div id="winsLossBox">
+        <h3>Wins: <span id="wins-text"></span></h3>
 
-    <h3>Losses: <span id="loss-text"></span></h3>
+        <h3>Losses: <span id="loss-text"></span></h3>
+    </div>
 
-    <h3>Guesses Left: <span id="guesses-text"></span></h3>
+    <div id="gameBox">
+        <h3>You Chose: <span id="user-letter"> </span></h3>
 
-    <h3>Your guesses so far: <span id="used"></span></h3>
 
-    <h2>Computer's Letter: <span id="computer-letter">?</span></h2>
-    <!-- This will appear after the user has guessed correctly, or run out of guesses. -->
+        <h3>Guesses Left: <span id="guesses-text"></span></h3>
 
-    <!-- <button onclick="myFunction()">Try it</button> -->
+        <h3>Your guesses so far: <span id="used"></span></h3>
+
+        <h2>Computer's Letter: <span id="computer-letter">?</span></h2>
+        <!-- This will appear after the user has guessed correctly, or run out of guesses. -->
+
+    </div>
+    <div id="bottomContainer">
+        
+    </div>
+</div>
+
+    <!-- <button id#="click-me">Play Game!</button> -->
 
 
 
