@@ -1,24 +1,20 @@
 
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    
+$(document).ready(function () {
+
+    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var wins = 0;
     var losses = 0;
     var numGuesses = 10;
     var usedArray = [];
 
 
-function compGuess(letters) {
-    console.log(letters);
-    return letters[Math.floor(Math.random() * letters.length)];
-    
-}
-//computer chooses a random letter from the array
-var computerLetter = compGuess(letters);
+    function compGuess(letters) {
+        console.log(letters);
+        return letters[Math.floor(Math.random() * letters.length)];
+    }
 
-
-
-
-$(document).ready(function () {
+    //computer chooses a random letter from the array
+    var computerLetter = compGuess(letters);
 
     function winnerBox() {
         var winBox = document.getElementById("winner-message");
@@ -27,15 +23,24 @@ $(document).ready(function () {
 
     function reset() {
         console.log("game reset");
+
         var winBox = document.getElementById("winner-message");
         winBox.style.display = "none";
+
+
+        computerLetter = compGuess(letters);
+        document.getElementById("computer-letter").textContent = "?";
+        
+
         var numGuesses = 10;
         document.getElementById("guesses-text").textContent = numGuesses;
+
         var usedArray = [];
-        var userLetter = " ";
+        document.getElementById("used").textContent = usedArray.join(", ");
+
+        var userLetter = "?"
         document.getElementById("user-letter").textContent = userLetter;
-        document.getElementById("computer-letter").textContent = "?";
-        compGuess(letters);
+
 
     }
 
@@ -52,7 +57,8 @@ $(document).ready(function () {
         var userLetter = event.key.toLowerCase();
         console.log(userLetter);
         console.log("comp " + computerLetter);
-      
+        compGuess(letters);
+
         //Decrease number of guesses
         if (numGuesses > 0) {
             numGuesses--;
@@ -64,7 +70,7 @@ $(document).ready(function () {
                 document.getElementById("user-letter").textContent = userLetter;
 
                 //compare it to the computers letter, 
-                
+
                 //if guessed correctly 
                 if (userLetter === computerLetter) {
                     //tell user they won
@@ -82,7 +88,7 @@ $(document).ready(function () {
 
                     //tell user to guess again
                     alert("Incorrect guess, please choose a new letter!")
-                   
+
                     //prints used letter to the screen
                     usedArray.push(userLetter);
                     document.getElementById("used").textContent = usedArray.join(", ");
@@ -108,7 +114,7 @@ $(document).ready(function () {
             losses++;
 
             //reset game******
-            reset();
+            
         }
 
         document.getElementById("wins-text").textContent = wins;
