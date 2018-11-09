@@ -56,6 +56,7 @@ $(document).ready(function () {
         //make sure it is lowercase
         var userLetter = event.key.toLowerCase();
         console.log(userLetter);
+        
         console.log("comp " + computerLetter);
         compGuess(letters);
 
@@ -92,6 +93,8 @@ $(document).ready(function () {
                     //prints used letter to the screen
                     usedArray.push(userLetter);
                     document.getElementById("used").textContent = usedArray.join(", ");
+
+                  
                 }
 
                 //if in used array
